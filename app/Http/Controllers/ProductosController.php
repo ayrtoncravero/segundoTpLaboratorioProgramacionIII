@@ -13,12 +13,7 @@ class ProductosController extends Controller
 
     public function crear(Request $request){
 
-        $request->validate([
-            'nombre' => 'required|max:256',
-            'descripcion' => 'required',
-            'precio' => 'required|min:0',
-            'stock' => 'required|min:0',
-        ]);
+        $this->validator($request);
 
         $nombre = $request->input('nombre');
         $descripcion = $request->input('descripcion');
@@ -26,10 +21,12 @@ class ProductosController extends Controller
         $stock = $request->input('stock');
 
         $producto = new Producto();
+
         $producto->setNombre($nombre);
         $producto->setDescripcion($descripcion);
         $producto->setPrecio($precio);
         $producto->setStock($stock);
+
         $producto->save();
 
         return view('productoCreado', ['producto' => $producto]);
@@ -38,5 +35,16 @@ class ProductosController extends Controller
     public function lista(){
         $productos = Producto::all();
         return view('lista', ['productos' => $productos]);
+    }
+
+    public function validator(Request $request){
+        $request->validate([
+            'nombre' => 'required|max:256',
+            'descripcion' => 'required',
+            'precio' => 'required|min:0',
+            'stock' => 'required|min:0',
+        ]);
+
+        return $request;
     }
 }

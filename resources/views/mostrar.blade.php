@@ -1,8 +1,7 @@
-<html>
-    <head>
-        <title>Cargar productos</title>
-    </head>
-    <body>
+@extends('layouts.app')
+
+@section('title', 'Cargar producto')
+@section('body')
 
         @if($errors->any())
             <div>
@@ -30,5 +29,5 @@
             <br>
             <input type="submit" value="Enviar">
         </form>
-    </body>
-</html>
+
+@endsection
