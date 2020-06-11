@@ -1,10 +1,13 @@
-<html>
-    <head>
-        <title>Producto creado</title>
-    </head>
-    <body>
-        <p>El producto: {{ $producto->getNombre() }} se creo exitosamente</p>
-        <br>
-        <p>En "/listaProductos", podra ver el stock</p>
-    </body>
-</html>
+@extends('layouts.app')
+
+@section('body')
+@section('title', 'Producto creado')
+
+    <p>El producto: {{ $producto->getNombre() }} se creo exitosamente</p>
+    <br>
+    <p>En "/listaProductos" se puede ver el stock en la DB</p>
+
+@endsection
+
+
+
