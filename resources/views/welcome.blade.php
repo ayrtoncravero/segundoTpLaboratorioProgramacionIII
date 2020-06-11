@@ -71,7 +71,7 @@
             <img class="card-img img" src="https://picsum.photos/700/400?random">
             <div class="card-img-overlay row justify-content-center">
                 <div class="align-self-center">
-                    <a href="/productos" class="btn btn-outline-light rounded-pill pl-5 pr-5">Plazo fijo</a>
+                    <a href="/productos" class="btn btn-outline-light rounded-pill pl-5 pr-5">Form products</a>
                 </div>
             </div>
         </div>
